@@ -15,7 +15,7 @@ app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/api/blog', articleRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/blog', articleRoutes);
 
 export default app;
