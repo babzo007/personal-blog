@@ -1,6 +1,5 @@
 import { existsSync, writeFileSync, readFileSync } from 'node:fs';
 import { ArticleType } from './types/article.types.js';
-import { randomUUID } from 'node:crypto';
 
 const filePath = './src/models/data.json';
 
@@ -15,23 +14,29 @@ export class Article {
     return JSON.parse(files);
   }
   static save(data: ArticleType) {
-    const files = readFileSync(filePath, 'utf-8');
-    const articles = JSON.parse(files);
+    const articles = Article.readArticlesFromFile();
     articles.push(data);
     writeFileSync(filePath, JSON.stringify(articles));
     return data;
   }
 
-  static findById(id: string) {
+  private static readArticlesFromFile(): ArticleType[] {
     const files = readFileSync(filePath, 'utf-8');
-    const articles = JSON.parse(files);
+    const articles: ArticleType[] = JSON.parse(files);
+    return articles;
+  }
+
+  static findById(id: string) {
+    const articles = Article.readArticlesFromFile();
     const article = articles.find((article: ArticleType) => article.id === id);
+    if (!article) {
+      throw new Error('Article not found');
+    }
     return article;
   }
 
   static update(id: string, data: { title: string; content: string; author: string }): ArticleType {
-    const files = readFileSync(filePath, 'utf-8');
-    const articles = JSON.parse(files);
+    const articles = Article.readArticlesFromFile();
     const articleIndex = articles.findIndex((article: ArticleType) => article.id === id);
     if (articleIndex === -1) {
       throw new Error('Article not found');
@@ -40,5 +45,15 @@ export class Article {
     articles[articleIndex] = updatedArticle;
     writeFileSync(filePath, JSON.stringify(articles));
     return updatedArticle;
+  }
+
+  static delete(id: string) {
+    const articles = Article.readArticlesFromFile();
+    const articleIndex = articles.findIndex((article: ArticleType) => article.id === id);
+    if (articleIndex === -1) {
+      throw new Error('Article not found');
+    }
+    articles.splice(articleIndex, 1);
+    writeFileSync(filePath, JSON.stringify(articles));
   }
 }

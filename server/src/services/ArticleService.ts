@@ -21,4 +21,7 @@ export class ArticleService {
   static async updateArticleById(id: string, data: { title: string; content: string; author: string }) {
     return Article.update(id, data);
   }
+  static deleteArticleById(id: string) {
+    return Article.delete(id);
+  }
 }
