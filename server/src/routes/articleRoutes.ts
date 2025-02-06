@@ -1,12 +1,23 @@
 import express from 'express';
-import { getArticles, getHome, redirectHome } from '../controllers/articlesController.js';
+import {
+  createArticle,
+  // createArticle,
+  deleteArticleById,
+  getAllArticles,
+  getArticleById,
+  updateArticleById,
+} from '../controllers/articlesController.js';
 
-const routes = express.Router();
+const router = express.Router();
 
-routes.get('/', redirectHome);
+router.get('/articles', getAllArticles);
 
-routes.get('/home', getHome);
+router.post('/articles', createArticle);
 
-routes.get('/articles', getArticles);
+router.get('/articles/:id', getArticleById);
 
-export default routes;
+router.put('/articles/:id', updateArticleById);
+
+// router.delete('/articles/:id', deleteArticleById);
+
+export default router;

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "0eae3622-9e5c-4cb3-87ee-f077f1181e43",
+    "title": "This is my first title",
+    "content": "This is the lorem ipsum",
+    "author": "AN",
+    "createdAt": "2025-02-06T13:20:00.264Z",
+    "updatedAt": "2025-02-06T13:20:00.264Z"
+  },
+  {
+    "id": "730d6eea-0dd3-4168-a408-9172980c1601",
+    "title": "This is my second title",
+    "content": "This is the lorem ipsum",
+    "author": "AN",
+    "createdAt": "2025-02-06T13:20:12.048Z",
+    "updatedAt": "2025-02-06T13:20:12.048Z"
+  },
+  {
+    "id": "0cf1b921-9eaa-44a0-a89b-0fde8bab66ac",
+    "title": "This is my updated title",
+    "content": "This is the updated lorem ipsum",
+    "author": "AN",
+    "createdAt": "2025-02-06T13:20:17.771Z",
+    "updatedAt": "2025-02-06T13:20:17.771Z"
+  },
+  {
+    "id": "1bec558b-0939-4a29-ae5e-c6bb08a556af",
+    "title": "This is my up up updated title",
+    "content": "This is the updated lorem ipsum",
+    "author": "AN",
+    "createdAt": "2025-02-06T13:29:25.509Z",
+    "updatedAt": "2025-02-06T13:29:25.509Z"
+  }
+]

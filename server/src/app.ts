@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 
 import articleRoutes from './routes/articleRoutes.js';
-import adminRoutes from './routes/adminRoutes.js';
 const app = express();
 
 const corsOptions = {
@@ -15,7 +14,6 @@ app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/api/admin', adminRoutes);
 app.use('/api/blog', articleRoutes);
 
 export default app;
