@@ -5,10 +5,13 @@ import {
   deleteArticleById,
   getAllArticles,
   getArticleById,
+  renderHome,
   updateArticleById,
 } from '../controllers/articlesController.js';
 
 const router = express.Router();
+
+router.get('/', renderHome);
 
 router.get('/articles', getAllArticles);
 

@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-
 import articleRoutes from './routes/articleRoutes.js';
+import path from 'path';
+
 const app = express();
 
 const corsOptions = {
@@ -14,6 +15,12 @@ app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/api/blog', articleRoutes);
+
+app.set('view engine', 'pug');
+app.set('views', 'src/views');
+
+app.use(express.static(path.resolve('src/public')));
+
+app.use('/', articleRoutes);
 
 export default app;
