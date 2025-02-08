@@ -2,6 +2,8 @@
 
 ## Project Overview
 
+Project url: [https://roadmap.sh/projects/personal-blog]
+
 The **Personal Blog Backend** is a Node.js and TypeScript-based server application that provides RESTful API routes for managing blog articles. The backend supports features such as article creation, updating, and deletion with basic authentication for admin management. The articles are stored in a local data file rather than a database.
 
 ## Features
