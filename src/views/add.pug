@@ -1,0 +1,15 @@
+<!DOCTYPE html> 
+  head
+    title Personal Blog - Add a new article
+    link(rel='stylesheet', href='/styles.css')
+
+  body
+    h1 Add a new article
+    form(action="/admin/create", method="POST")
+        label(for="title") Title
+        input(type="hidden", name="author", id="author", value="admin")
+        input(type="text", name="title", id="title")
+        label(for="content") Content
+        textarea(name="content", id="content")
+        button(type="submit") Add Article
+

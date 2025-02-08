@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title Personal Blog - Delete Article
+    link(rel='stylesheet', href='/styles.css')
+  body
+    h1 Delete Article
+    p Are you sure you want to delete the article titled "#{article.title}"?
+    form(action="/admin/delete/" + article.id method="POST")
+      button(type="submit") Yes, Delete
+      a(href="/admin") Cancel

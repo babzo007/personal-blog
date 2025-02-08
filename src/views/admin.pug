@@ -5,10 +5,14 @@
 
   body
     h1 Admin
+    a(href="/admin/add") Add new Article
     table
         tbody 
             each article in articles
                 tr
                     td 
                         a(href="/articles/"+article.id) #{article.title}
-                    td #{article.createdAt}
+                    td 
+                      a(href="/admin/edit/" + article.id) Edit
+                    td 
+                      a(href="/admin/delete/"+ article.id) Delete

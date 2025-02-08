@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Personal Blog - Edit Article
+    link(rel='stylesheet', href='/styles.css')
+  body
+    h1 Edit Article
+    form(action="/admin/update/" + article.id method="POST")
+      label(for="title") Title:
+      input(type="text" id="title" name="title" value=article.title required)
+      br
+      label(for="content") Content:
+      textarea(id="content" name="content" required)= article.content
+      br
+      button(type="submit") Save Changes
