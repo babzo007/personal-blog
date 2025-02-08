@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import articleRoutes from './routes/articleRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
 import path from 'path';
 
 const app = express();
@@ -22,5 +23,6 @@ app.set('views', 'src/views');
 app.use(express.static(path.resolve('src/public')));
 
 app.use('/', articleRoutes);
+app.use('/admin', adminRoutes);
 
 export default app;

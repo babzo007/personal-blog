@@ -1,0 +1,14 @@
+<!DOCTYPE html> 
+  head
+    title Personal Blog - Admin
+    link(rel='stylesheet', href='/styles.css')
+
+  body
+    h1 Admin
+    table
+        tbody 
+            each article in articles
+                tr
+                    td 
+                        a(href="/articles/"+article.id) #{article.title}
+                    td #{article.createdAt}

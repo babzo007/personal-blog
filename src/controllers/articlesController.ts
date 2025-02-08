@@ -69,7 +69,7 @@ export const updateArticleById = async (req: Request, res: Response) => {
 
 export const deleteArticleById = async (req: Request, res: Response) => {
   try {
-    const article = await ArticleService.deleteArticleById(req.params.id);
+    ArticleService.deleteArticleById(req.params.id);
     res.json({ status: 'success', message: 'Article deleted successfully' });
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete article' });

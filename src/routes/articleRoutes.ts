@@ -11,7 +11,11 @@ import {
 
 const router = express.Router();
 
-router.get('/', renderHome);
+router.get('/', (_, res) => {
+  res.redirect('/home');
+});
+
+router.get('/home', renderHome);
 
 router.get('/articles', getAllArticles);
 
